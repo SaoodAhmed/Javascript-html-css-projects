@@ -1,0 +1,150 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Array Cardio</title>
+</head>
+<body>
+    <p><em>Look at Js console </em>💁</p>
+</body>
+
+<style>
+    p{
+        font-size: 50px;;
+        
+    }
+</style>
+<script>
+    let inventors = [
+      {first:'Albert', last:"Eisntein", year:1897, passed:1955},                  // index: 0
+      {first:"Issac",last:"Newton", year:1643, passed:1727},                      // index: 1
+      { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },            // index: 2
+      { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },                // index: 3
+      { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },            // index: 4
+      { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },        // index: 5
+      { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },                 // index: 6
+      { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },         // index: 7
+      { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },               // index: 8
+      { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },             // index: 9
+      { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },               // index: 10
+      { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }           // index: 11
+    ];
+
+
+    const people = [
+      'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
+      'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul', 'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 'Berlin, Irving',
+      'Benn, Tony', 'Benson, Leana', 'Bent, Silas', 'Berle, Milton', 'Berry, Halle', 'Biko, Steve', 'Beck, Glenn', 'Bergman, Ingmar', 'Black, Elk', 'Berio, Luciano',
+      'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
+      'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
+    ];
+
+
+
+//    ******************************** Array filter() Method ****************** // it return 2 or 3 out of 10 or more items
+
+// 1. Filter the list of inventors for those who were born in the 1500's
+
+//     const fifteen = inventors.filter(function(inventor){
+//         if(inventor.year>=1500 && inventor.year<1600){
+//             return 1;
+//         }
+//     })
+// console.table(fifteen);
+
+
+let fifteen = inventors.filter(inventer=>(inventer.year>1500 && inventer.year<=1599));
+console.table(fifteen);
+
+//   ******************************* Array Map() Method ********************** // it return same amout of itmes as you give it!
+// 2. Give us an array of the inventor first and last names
+
+let fNameLName = inventors.map(inventor=>inventor.first+' '+inventor.last);
+console.log(fNameLName)
+
+
+//   ******************************* Array sort() method **********************
+// 3. Sort the inventors by birthdate, oldest to youngest 
+
+// let order = inventors.sort(function(lastPerson,nextPerson){
+//     if(lastPerson.year>nextPerson.year){
+//         return 1;
+//     }else{
+//         return -1;
+//     }
+// })
+// console.table(order)
+
+
+let ordered = inventors.sort((aPerson,bPerson)=>aPerson.year>bPerson.year? 1:-1);
+console.table(ordered);
+
+
+// 5. Sort the inventors by years lived
+
+let older = inventors.sort((xPerson, yPerson)=>{
+    let lastInventor = xPerson.passed - xPerson.year;
+    let nextInventor = yPerson.passed - yPerson.year;
+    return lastInventor>nextInventor?-1:1
+    // if(lastInventor>nextInventor){
+    //     return -1
+    // }else{
+    //     return 1
+    // }
+})
+console.table(older)
+
+
+
+
+
+
+//   ******************************* Array reduce() method **********************
+// 4. How many years did all the inventors live?
+
+// let total = 0;
+
+// for(let i=0; i<inventors.length; i++){
+//     total += inventors[i].passed - inventors[i].year
+// }
+
+// console.log(total)
+
+
+let totalYear = inventors.reduce((total,inventor)=>{
+    return total+(inventor.passed-inventor.year)
+},0)
+
+console.log(totalYear)
+
+
+// // let cat = document.querySelectorAll('.mw-category a');
+
+// let category = document.querySelector('.mw-category');
+// let links = [...category.querySelectorAll('a')];
+// //let links = Array.from(category.querySelectorAll('a'));
+// let de = links
+//            .map(link=>link.textContent)
+//            .filter(street=>street.includes('de'));
+
+
+let last = people.sort((lastName,nextName)=>{
+    let [aFirst,aLast] = lastName.split(', ');
+    let [bFirst,bLast] = nextName.split(', ');
+    return aLast>bLast?1:-1; 
+})
+console.log(last); 
+
+
+
+const data = ["Saud","Saud","car","car","car"]
+let vehicles = data.reduce(function(obj,item){
+    if(!obj[item]){
+        obj[item] = 0;
+    }
+    obj[item]++;
+    return obj;
+},{})
+
+ console.log(vehicles)
+// </script>
+// </html>

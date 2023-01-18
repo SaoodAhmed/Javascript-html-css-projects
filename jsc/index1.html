@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>querySelector or querySelectorAll</title>
+    </head>
+    <body>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+
+        <script>
+            const list = document.querySelector('ul li');
+            console.log(list)
+            const listAll = document.querySelectorAll('ul li');
+            console.log(listAll);
+
+            for(let i=0; i<listAll.length; i++){
+                if(i%2==0){
+                    listAll[i].style.background = "#8A2BE2";
+                }
+                else{
+                    listAll[i].style.background = "#7B68EE"
+                }
+            }
+
+        </script>
+    </body>
+</html>

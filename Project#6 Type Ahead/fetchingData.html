@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello from Data fetching via Async Await</h1>
+    <script type="text/javascript">
+        const  fetchData = async ()=> {
+            const response = await fetch('./data.json');
+            
+            const data_fetch = await response.json();
+            
+            let {data} =data_fetch ; 
+            console.log(data,'data_js');
+            
+        }
+        fetchData();
+    </script>
+</body>
+</html>

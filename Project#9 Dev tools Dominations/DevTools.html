@@ -1,0 +1,95 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Dev Tools</title>
+    </head>
+
+    <body>
+        <p onclick="makeBlue()">I love coding</p>
+        <script>
+            let students = [{id:"19sw72", name:"Saud Ahmed", age:4}, {id:"20sw002", name:"Rameez", age:3}]
+
+            
+            function makeBlue(){
+                let p = document.querySelector('p');
+                p.style.color = 'blue';
+                p.style.fontSize = '50px';
+            }
+
+            // Regular
+            console.log("I love you guys!!")
+
+            // Interpolated
+            let age = 23;
+            console.log("i am here, %s", "Saud!!");
+            console.log(`i am ${age} years old!!` );
+
+            // style
+            console.log("%c Did you like programming!!", 'font-size:50px; background:red; color:white; text-shadow:10px 10px 0 black');
+
+            // warn
+            console.warn("Ohh! it's No ball, free-Hit");
+
+            // error
+            console.error("Ohh shit!!");
+
+            // info
+            console.info("js stands for javascript that, is a language!!");
+
+            // test
+
+            let p = document.querySelector('p');
+            console.assert(p.classList.contains('Hi!'), 'its wrong!!')
+
+            console.assert(1 === 2, 'you did not select the right element!')
+
+            // clearing
+
+            console.clear()
+
+            // view the dom elements
+
+            console.log(p);
+            console.dir(p)
+            
+            console.clear();
+
+            // *****************group to gather
+
+            students.forEach(student=>{
+                console.groupCollapsed(`${student.name}`);
+                console.log(`This is ${student.name}`);
+                console.log(`${student.name} is ${student.age*5+3} years old`);
+                console.groupEnd(`${student.name}`);
+
+
+            });
+
+            console.table(students)
+
+
+            // ******************counting
+            console.count("i love");
+            console.count("you");
+            console.count("you");
+            console.count("i love");
+            console.count("you");
+            console.count("i love");
+            console.count("you");
+
+            // timing
+
+            console.time('Fetch Data:');
+            fetch('file.txt')
+                            .then(data=>data.json())
+                            .then(data=>{
+                                console.timeEnd('fetch Data')
+                                console.log(data);
+                             })
+
+
+
+        </script>
+
+    </body>
+</html>

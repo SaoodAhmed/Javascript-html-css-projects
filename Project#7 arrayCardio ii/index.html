@@ -1,0 +1,157 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Array Cardio ii</title>
+
+    </head>
+
+<body>
+
+<script>
+
+    let people = [
+        { name:'Saud', year: 1998 },
+        { name:'Asad', year:1988 },
+        { name:'Ahmed', year:1986 },
+        { name:'Ali', year:2015 },
+        { name:'Waris', year:1970 } 
+    ]
+
+    const comments = [
+        { text:'I love suffisum!', id: 23455 },
+        { text:'super good!', id: 344234 },
+        { text:'i love you guys', id: 342345 },
+        { text:'Saud is programmer!', id: 9398538 },
+        { text:'Obviously not!', id: 543423 }
+    ]
+
+
+
+    let ageArray = [34, 23, 20, 26, 12];
+
+
+
+    // Some and Every Checks
+    // Array.prototype.some() // is at least one person 12?
+
+
+    // let isAge = ageArray.some(function(age){
+    //     return age<18;
+    // })
+    // console.log(isAge);
+
+
+    // let isAge = ageArray.some(age => age<18)
+    // console.log(isAge);
+
+
+
+    // Array.prototype.every() // is everyone 12?
+
+    // let allAge = ageArray.every(function(age){
+    //     return age<18;
+    // })
+    // console.log({allAge});
+
+    //array.prototype.find()
+    // Find is like filter, but instead returns just the one you are looking for
+    // find the age that, is equal to 12
+
+
+    // let fnd = ageArray.find(function(age){
+    //     if(age === 20){
+    //         return true;
+    //     }
+    // })
+    // console.log(fnd)
+
+
+    // let fnd = ageArray.find(age=>age===26)
+    // console.log(fnd);
+
+
+    // Array.prototype.findIndex()
+    // Find the index with this age
+    // delete the age at index 4
+
+
+    // let index = ageArray.findIndex(function(age){
+    //     if(age === 12)
+    //     return true;
+    // })
+    // console.log(index);
+
+
+    // let index = ageArray.findIndex(age => age===12);
+    // console.log(index);
+
+
+    // ageArray.splice(index,4);
+
+
+
+
+    // const isAdult = people.some(function(person){
+    //     let currentYear = (new Date()).getFullYear()
+    //     if(currentYear - person.year >= 19){
+    //         return true;
+    //     }
+    // })
+    // console.log(isAdult)
+
+
+    // let isAdult = people.some(people =>(new Date()).getFullYear() - people.year >= 19)
+    // console.log({isAdult})
+
+
+    // let allAdults = people.every(person => (new Date()).getFullYear() - person.year >=19)
+    // console.log(allAdults)
+
+
+
+    // const comment = comments.find(function(comment){
+    //     if(comment.id === 9398538){
+    //         return true;
+    //     }
+    // })
+    // console.log(comment)
+
+
+    // let comment = comments.find(comment => comment.id===9398538)
+    // console.log(comment)
+
+    const index = comments.findIndex(comment=>comment.id===9398538);
+    console.log(index)
+
+    comments.splice(index, 1);
+
+   
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Javascript</title>
+    </head>
+
+    <body>
+        <h1>Counter</h1>
+        <button id="inc">Increment</button>
+        <h1><span id="start">0</span></h1>
+        <button id="dec">decrement</button>
+        
+        <script>
+            const select1 = document.querySelector('#inc');
+            const select2 = document.querySelector('#dec')
+            let count = 0;
+            let counter = ()=>{
+                let dis = document.getElementById('start')
+                count++;
+                dis.innerText = count;
+                console.log(count);
+            }
+
+            let decrementor = ()=>{
+                let dis = document.getElementById('start')
+                count--;
+                dis.innerText = count;
+                console.log(count);
+            }
+             
+            select1.addEventListener('click',counter)
+            select2.addEventListener('click',decrementor)
+            
+        </script>
+    </body>
+</html>
